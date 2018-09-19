@@ -1,0 +1,55 @@
+﻿<Window x:Class="Hunting_for_fish.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hunting_for_fish"
+        mc:Ignorable="d"
+        Title="Hunting for fish" 
+        Height="520" Width="800"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="CanMinimize"
+        Icon="Images/icon.png" >
+    <Grid Name="MainGrid" Margin="0,0,0,0" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <Frame Name="SandFrame" HorizontalAlignment="Left" Height="73" Margin="0,422,-1.667,-4.333" VerticalAlignment="Top" Width="795">
+            <Control.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC59B00" />
+                    <GradientStop Color="#FFFFDD8F" Offset="1" />
+                </LinearGradientBrush>
+            </Control.Background>
+        </Frame>
+        <Frame Name="WaterFrame" HorizontalAlignment="Stretch" Margin="0,0,0,53" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" >
+            <Control.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0034AD" Offset="1" />
+                    <GradientStop Color="#FF86ECFF" />
+                    <GradientStop Color="#FF005CFF" Offset="1" />
+                    <GradientStop Color="#FF000C25" Offset="1" />
+                    <GradientStop Color="#FF002C8C" Offset="1" />
+                </LinearGradientBrush>
+            </Control.Background>
+        </Frame>
+        <Image Name="FishType1_1" Source="Images/fish_type1.png" Margin="0,10,695,456.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="FishType1_2" Source="Images/fish_type1.png" Margin="0,50,695,416.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="FishType1_3" Source="Images/fish_type1.png" Margin="0,90,695,376.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="FishType1_4" Source="Images/fish_type1.png" Margin="0,130,695,336.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="FishType2_1" Source="Images/fish_type2.png" Margin="0,170,695,295.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="FishType2_2" Source="Images/fish_type2.png" Margin="0,210,695,255.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="FishType2_3" Source="Images/fish_type2.png" Margin="0,250,695,215.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="FishType3_1" Source="Images/fish_type3.png" Margin="0,290,695,172.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="FishType3_2" Source="Images/fish_type3.png" Margin="0,330,695,132.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="FishType3_3" Source="Images/fish_type3.png" Margin="0,370,695,92.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="Player" Source="Images/human.png" Margin="364,443,369.333,7.667" MouseLeftButtonDown="WaterFrameOrFish_MouseLeftButtonUp" />
+        <Image Name="BoulderType1" Source="Images/boulder_Type1.png" Margin="375,461,382.333,10.667" />
+        
+        <Button Name="StartAndStopButton" Content="Старт" HorizontalAlignment="Left" Margin="708,434,0,0" VerticalAlignment="Top" Width="75" Background="#FFFFF2C1" BorderBrush="#FF000000" Click="StartAndStopButton_Click" />
+        <Button Name="PauseAndResumeButton" Content="Пауза" HorizontalAlignment="Left" Margin="708,460,0,0" VerticalAlignment="Top" Width="75" BorderBrush="#FF000000" Background="#FFFFF2C1" IsEnabled="False" Click="PauseButton_Click" />
+        <Button Name="ForMuteButton" HorizontalAlignment="Left" Margin="672,434,0,0" VerticalAlignment="Top" Width="20" Click="ForMuteButton_Click" Height="17" Foreground="{x:Null}" BorderBrush="Black" Background="{x:Null}" />
+        <Button Name="AboutTheGameButton" HorizontalAlignment="Left" Margin="672,460,0,0" VerticalAlignment="Top" Width="20" Click="AboutTheGameButton_Click" BorderBrush="Black" Foreground="{x:Null}" Height="17" Background="{x:Null}" />
+
+        <Label Name="ScoreValue" Content="Счёт: 0" HorizontalAlignment="Left" Margin="0,428,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="14" />
+        <Label Name="MaxScore" Content="Рекорд: 0 за 00:00" HorizontalAlignment="Left" Margin="0,454,0,0" VerticalAlignment="Top" FontSize="14" FontFamily="Segoe UI Semibold" />
+        <Label Name="GameTimerValue" Content="00:00" HorizontalAlignment="Left" Margin="184,432,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="26" />
+    </Grid>
+</Window>
