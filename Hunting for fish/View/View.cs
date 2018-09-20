@@ -161,9 +161,7 @@ namespace Hunting_for_fish
 
         public void UpdateFishMargin(int index, Thickness temporaryFishMargin)
         {
-            //Иногда, если во время игры и при наличии убитых рыбок нажать на крестик (кнопку закрытия, что в правом верхнем углу)
-            //вылетает ошибка System.Threading.Tasks.TaskCanceledException: "Отменена задача." именно вот в этом месте. Для решения
-            //этой проблемы сделан костыль в виде try с пустым cath. Приложение при этом завершается нормально.
+            //Как и в void UpateGameTimer(string time)
             try
             {
                 arrayFish[index].Dispatcher.Invoke(() => arrayFish[index].Margin = temporaryFishMargin);
@@ -173,14 +171,17 @@ namespace Hunting_for_fish
 
         public void UpdateFishOpacity(int index, int value)
         {
-            arrayFish[index].Dispatcher.Invoke(() => arrayFish[index].Opacity = value);
+            //Как и в void UpateGameTimer(string time)
+            try
+            {
+                arrayFish[index].Dispatcher.Invoke(() => arrayFish[index].Opacity = value);
+            }
+            catch { }
         }
 
         public void UpdateInvertedImageForFish(int index, int type)
         {
-            //Иногда, если во время игры и при наличии убитых рыбок нажать на крестик (кнопку закрытия, что в правом верхнем углу)
-            //вылетает ошибка System.Threading.Tasks.TaskCanceledException: "Отменена задача." именно вот в этом месте. Для решения
-            //этой проблемы сделан костыль в виде try с пустым cath. Приложение при этом завершается нормально.
+            //Как и в void UpateGameTimer(string time)
             try
             {
                 arrayFish[index].Dispatcher.Invoke(() => arrayFish[index].Source = chooseForInvertedImage(type));
@@ -190,7 +191,12 @@ namespace Hunting_for_fish
 
         public void UpdateInvertedImageHitForFish(int index, int type)
         {
-            arrayFish[index].Dispatcher.Invoke(() => arrayFish[index].Source = chooseForInvertedImageHit(type));
+            //Как и в void UpateGameTimer(string time)
+            try
+            {
+                arrayFish[index].Dispatcher.Invoke(() => arrayFish[index].Source = chooseForInvertedImageHit(type));
+            }
+            catch { }
         }
 
         public void UpdateMaxScore(int value, string time)
@@ -201,9 +207,7 @@ namespace Hunting_for_fish
 
         public void UpdateNotInvertedImageForFish(int index, int type)
         {
-            //Иногда, если во время игры и при наличии убитых рыбок нажать на крестик (кнопку закрытия, что в правом верхнем углу)
-            //вылетает ошибка System.Threading.Tasks.TaskCanceledException: "Отменена задача." именно вот в этом месте. Для решения
-            //этой проблемы сделан костыль в виде try с пустым cath. Приложение при этом завершается нормально.
+            //Как и в void UpateGameTimer(string time)
             try
             {
                 arrayFish[index].Dispatcher.Invoke(() => arrayFish[index].Source = chooseForNotInvertedImage(type));
@@ -213,7 +217,12 @@ namespace Hunting_for_fish
 
         public void UpdateNotInvertedImageHitForFish(int index, int type)
         {
-            arrayFish[index].Dispatcher.Invoke(() => arrayFish[index].Source = chooseForNotInvertedImageHit(type));
+            //Как и в void UpateGameTimer(string time)
+            try
+            {
+                arrayFish[index].Dispatcher.Invoke(() => arrayFish[index].Source = chooseForNotInvertedImageHit(type));
+            }
+            catch { }
         }
 
         public void UpdatePlayerRenderTransform(Transform transform)
